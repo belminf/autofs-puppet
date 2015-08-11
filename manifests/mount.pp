@@ -25,11 +25,11 @@
 # See README Docs for Examples.
 #
 define autofs::mount (
-  $mount,
+  $mount=$title,
   $mapfile,
   $mapcontents,
   $options,
-  $order,
+  $order=undef,
 ) {
 
   concat::fragment { "autofs::fragment preamble ${mount}":
