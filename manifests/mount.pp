@@ -32,6 +32,8 @@ define autofs::mount (
   $order=undef,
 ) {
 
+  include 'autofs'
+  
   concat::fragment { "autofs::fragment preamble ${mount}":
     ensure  => present,
     target  => '/etc/auto.master',
